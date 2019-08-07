@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/math-assistant/static/css/main.2cce8147.chunk.css",
+    "main.js": "/math-assistant/static/js/main.e2143db8.chunk.js",
+    "main.js.map": "/math-assistant/static/js/main.e2143db8.chunk.js.map",
+    "runtime~main.js": "/math-assistant/static/js/runtime~main.6674d726.js",
+    "runtime~main.js.map": "/math-assistant/static/js/runtime~main.6674d726.js.map",
+    "static/js/2.34b4fde6.chunk.js": "/math-assistant/static/js/2.34b4fde6.chunk.js",
+    "static/js/2.34b4fde6.chunk.js.map": "/math-assistant/static/js/2.34b4fde6.chunk.js.map",
+    "index.html": "/math-assistant/index.html",
+    "precache-manifest.226b52055451366c7c973d5c707d8ec1.js": "/math-assistant/precache-manifest.226b52055451366c7c973d5c707d8ec1.js",
+    "service-worker.js": "/math-assistant/service-worker.js",
+    "static/css/main.2cce8147.chunk.css.map": "/math-assistant/static/css/main.2cce8147.chunk.css.map",
+    "static/media/logo.svg": "/math-assistant/static/media/logo.5d5d9eef.svg"
+  }
+}
