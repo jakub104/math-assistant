@@ -25,7 +25,7 @@ const Global = createGlobalStyle`
 		color: var(--color-primary);
 		font-size: 20px;
 		font-family: 'Ubuntu', sans-serif;
-		/* overflow: hidden; */
+		overflow: hidden;
 	}
 `
 

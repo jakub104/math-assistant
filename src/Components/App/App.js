@@ -35,6 +35,7 @@ const Rate = styled.img`
 	${props =>
 		props.again &&
 		css`
+			/* transform: rotate(0); */
 			animation: back;
 		`
 	};
@@ -110,17 +111,26 @@ class App extends Component {
 		}
 	}
 
-	getMinutes = () => {
-		if (Math.floor(this.state.centisecondsElapsed / 3600) < 60) {
-			return (`0${Math.floor(this.state.centisecondsElapsed / 3600)}`)
+	handleCheckPress = (e) => {
+		if (e.key === 'Enter' && e.shiftKey) {
+			this.handleClearClick();
 		}
 		else {
-			return Math.floor(this.state.centisecondsElapsed / 3600)
+			this.handleCheckClick();
+		}
+	}
+
+	getMinutes = () => {
+		if (Math.floor(this.state.centisecondsElapsed / 6000) < 10) {
+			return (`0${Math.floor(this.state.centisecondsElapsed / 6000)}`)
+		}
+		else {
+			return Math.floor(this.state.centisecondsElapsed / 6000)
 		}
 	}
 
 	getSeconds = () => {
-		return (`0${Math.floor(this.state.centisecondsElapsed / 100)}`).slice(-2)
+		return (`0${Math.floor((this.state.centisecondsElapsed / 100)) % 60}`).slice(-2)
 	}
 
 	getCentiseconds = () => {
@@ -135,33 +145,16 @@ class App extends Component {
 	}
 
 	render() {
-		// window.addEventListener("keypress", this.handleClick)
+		document.addEventListener("keypress", this.handleCheckPress)
 		return (
 			<>
 				<Global />
 				<Wrapper app>
 					<Rate run={this.state.running} again={this.state.again} src={rate} alt="rate" />
 					<Border onClick={this.handleCheckClick}>
-						<Time 
-						// responsive={this.state.responseTimeFont}
-							// onLoad={
-							// 	() => {
-							// 		const width = document.getElementById('border').width;
-							// 		console.log(width);
-							// 		window.addEventListener("resize", () => {
-							// 			if(width > 625) {
-							// 				this.setState({responseTimeFont: true})
-							// 			}
-							// 			else {
-							// 				this.setState({responseTimeFont: true})
-							// 			}
-							// 		})
-							// 	}
-							// }
-						
-						>{this.getMinutes()}:{this.getSeconds()}.{this.getCentiseconds()}</Time>
+						<Time>{this.getMinutes()}:{this.getSeconds()}.{this.getCentiseconds()}</Time>
 					</Border>
-					<Clear onClick={this.handleClearClick}>
+					<Clear onClick={this.handleClearClick} title="Wyczyść">
 						<Icon icon={['fas', 'undo-alt']} />
 					</Clear>
 				</Wrapper>
