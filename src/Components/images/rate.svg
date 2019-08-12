@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1080" height="1080" viewBox="0 0 1080 1080">
+	<defs>
+	<clipPath id="b">
+	<rect width="1080" height="1080"/>
+	</clipPath>
+	</defs>
+	<g id="a" clip-path="url(#b)">
+		<path d="M19.41,10.747a7,7,0,0,1,12.18,0l13.488,23.8A7,7,0,0,1,38.988,45H12.012a7,7,0,0,1-6.09-10.451Z" transform="translate(566 45) rotate(180)" fill="#AED8E5"/>
+	</g>
+</svg>
