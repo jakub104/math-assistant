@@ -14,8 +14,7 @@ library.add(faUndoAlt);
 
 const Rate = styled.img`
 	position: absolute;
-	width: 75vmin;
-	max-width: 500px;
+	width: 100px;
 	height: 75vmin;
 	max-height: 500px;
 	transform: translateY(-45px);
@@ -24,7 +23,7 @@ const Rate = styled.img`
 	animation: loop 10s linear infinite;
 	animation-play-state: paused;
 	opacity: 0.5;
-	transition: opacity 0.1s ease;
+	transition: all 0.1s ease;
 	${props =>
 		props.run &&
 		css`
@@ -36,7 +35,8 @@ const Rate = styled.img`
 		props.again &&
 		css`
 			/* transform: rotate(0); */
-			animation: back;
+			/* animation: back; */
+			animation: none
 		`
 	};
 `
@@ -142,6 +142,7 @@ class App extends Component {
 			this.stop();
 		}
 		this.setState({again: true, centisecondsElapsed: 0});
+		document.getElementById('rate').style.transform = 'rotate(0) translateY(-45px)'
 	}
 
 	render() {
@@ -150,7 +151,7 @@ class App extends Component {
 			<>
 				<Global />
 				<Wrapper app>
-					<Rate run={this.state.running} again={this.state.again} src={rate} alt="rate" />
+					<Rate id="rate" run={this.state.running} again={this.state.again} src={rate} alt="rate" />
 					<Border onClick={this.handleCheckClick}>
 						<Time>{this.getMinutes()}:{this.getSeconds()}.{this.getCentiseconds()}</Time>
 					</Border>
