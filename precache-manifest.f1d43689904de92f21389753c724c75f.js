@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "82906348cfa41e5348187abc60f974da",
+    "revision": "b2656b813a938087a957019b669c64d2",
     "url": "/math-assistant/index.html"
   },
   {
-    "revision": "c3251f8648d8f202be69",
+    "revision": "95b6cd61aa1dfc64f29d",
     "url": "/math-assistant/static/css/main.85049112.chunk.css"
   },
   {
@@ -12,8 +12,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/math-assistant/static/js/2.b94e0c69.chunk.js"
   },
   {
-    "revision": "c3251f8648d8f202be69",
-    "url": "/math-assistant/static/js/main.e46b7b8d.chunk.js"
+    "revision": "95b6cd61aa1dfc64f29d",
+    "url": "/math-assistant/static/js/main.99ed9e7d.chunk.js"
   },
   {
     "revision": "dab880646999a201ff51",
@@ -28,8 +28,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/math-assistant/static/media/instagram-icon.c5e01a9e.png"
   },
   {
-    "revision": "49fe6abe09aba987fbca1e3b84e21810",
-    "url": "/math-assistant/static/media/rate.49fe6abe.svg"
+    "revision": "c392d092663b5a314d7c7366b0d6584c",
+    "url": "/math-assistant/static/media/rate.c392d092.svg"
   },
   {
     "revision": "8a2fabccfad38d9158808e24891ddf2a",
