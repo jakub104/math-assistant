@@ -1,16 +1,21 @@
 {
   "files": {
-    "main.css": "/math-assistant/static/css/main.2cce8147.chunk.css",
-    "main.js": "/math-assistant/static/js/main.e2143db8.chunk.js",
-    "main.js.map": "/math-assistant/static/js/main.e2143db8.chunk.js.map",
+    "main.css": "/math-assistant/static/css/main.85049112.chunk.css",
+    "main.js": "/math-assistant/static/js/main.e46b7b8d.chunk.js",
+    "main.js.map": "/math-assistant/static/js/main.e46b7b8d.chunk.js.map",
     "runtime~main.js": "/math-assistant/static/js/runtime~main.6674d726.js",
     "runtime~main.js.map": "/math-assistant/static/js/runtime~main.6674d726.js.map",
-    "static/js/2.34b4fde6.chunk.js": "/math-assistant/static/js/2.34b4fde6.chunk.js",
-    "static/js/2.34b4fde6.chunk.js.map": "/math-assistant/static/js/2.34b4fde6.chunk.js.map",
+    "static/js/2.b94e0c69.chunk.js": "/math-assistant/static/js/2.b94e0c69.chunk.js",
+    "static/js/2.b94e0c69.chunk.js.map": "/math-assistant/static/js/2.b94e0c69.chunk.js.map",
     "index.html": "/math-assistant/index.html",
-    "precache-manifest.226b52055451366c7c973d5c707d8ec1.js": "/math-assistant/precache-manifest.226b52055451366c7c973d5c707d8ec1.js",
+    "precache-manifest.7d6becdb831b84b76ed95a460833ff61.js": "/math-assistant/precache-manifest.7d6becdb831b84b76ed95a460833ff61.js",
     "service-worker.js": "/math-assistant/service-worker.js",
-    "static/css/main.2cce8147.chunk.css.map": "/math-assistant/static/css/main.2cce8147.chunk.css.map",
-    "static/media/logo.svg": "/math-assistant/static/media/logo.5d5d9eef.svg"
+    "static/css/main.85049112.chunk.css.map": "/math-assistant/static/css/main.85049112.chunk.css.map",
+    "static/media/instagram-d.png": "/math-assistant/static/media/instagram-d.74b52e9d.png",
+    "static/media/instagram-icon.png": "/math-assistant/static/media/instagram-icon.c5e01a9e.png",
+    "static/media/rate.svg": "/math-assistant/static/media/rate.49fe6abe.svg",
+    "static/media/snapchat-d.png": "/math-assistant/static/media/snapchat-d.8a2fabcc.png",
+    "static/media/snapchat-icon.png": "/math-assistant/static/media/snapchat-icon.ecfbbab3.png",
+    "static/media/wow.png": "/math-assistant/static/media/wow.909d1f30.png"
   }
 }
