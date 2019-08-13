@@ -3,8 +3,8 @@ import React, { Component } from 'react'
 import styled, { css } from 'styled-components'
 import { library } from '@fortawesome/fontawesome-svg-core'
 // STYLES
-import '../../Styles/main-keyframes.css'
-import { WebLink, Icon } from '../../Styles/Components'
+import '../../../Styles/main-keyframes.css'
+import { WebLink, Icon } from '../../../Styles/Components'
 // ICONS
 import { faLocationArrow } from '@fortawesome/free-solid-svg-icons'
 

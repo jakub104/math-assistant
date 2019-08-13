@@ -25,6 +25,12 @@ const Wrapper = styled.main`
 			}
 		`
 	}
+	${props =>
+		props.app &&
+		css`
+			overflow-y: scroll;
+		`
+	}
 `
 
 const BrowserLink = styled.a`

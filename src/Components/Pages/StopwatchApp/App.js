@@ -3,10 +3,10 @@ import React, { Component } from 'react'
 import styled, { css } from 'styled-components'
 import { library } from '@fortawesome/fontawesome-svg-core'
 // STYLES
-import Global from '../Styles/Global'
-import { Wrapper, Icon } from '../Styles/Components'
+import Global from '../../Styles/Global'
+import { Wrapper, Icon } from '../../Styles/Components'
 // FILES
-import rate from '../images/rate.svg'
+import rate from '../../images/rate.svg'
 // ICONS
 import { faUndoAlt } from '@fortawesome/free-solid-svg-icons'
 
@@ -14,7 +14,7 @@ library.add(faUndoAlt);
 
 const Rate = styled.img`
 	position: absolute;
-	width: 100px;
+	width: 30px;
 	height: 75vmin;
 	max-height: 500px;
 	transform: translateY(-45px);
@@ -23,7 +23,7 @@ const Rate = styled.img`
 	animation: loop 10s linear infinite;
 	animation-play-state: paused;
 	opacity: 0.5;
-	transition: all 0.1s ease;
+	transition: all 0.3s ease;
 	${props =>
 		props.run &&
 		css`
@@ -34,9 +34,9 @@ const Rate = styled.img`
 	${props =>
 		props.again &&
 		css`
+			animation: back;
+			/* padding-top: 40px; */
 			/* transform: rotate(0); */
-			/* animation: back; */
-			animation: none
 		`
 	};
 `
@@ -142,7 +142,7 @@ class App extends Component {
 			this.stop();
 		}
 		this.setState({again: true, centisecondsElapsed: 0});
-		document.getElementById('rate').style.transform = 'rotate(0) translateY(-45px)'
+		// document.getElementById('rate').style.transform = 'rotate(0) translateY(-45px)'
 	}
 
 	render() {
