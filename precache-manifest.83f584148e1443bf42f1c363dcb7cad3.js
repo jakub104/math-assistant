@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "fa9119945cae9de9b759f361215afdd4",
+    "revision": "c3a25069fa5e3b057176ac18e3a7e8a6",
     "url": "/math-assistant/index.html"
   },
   {
-    "revision": "5c6bb39486f4473a6bbc",
+    "revision": "325b452890adebff83cf",
     "url": "/math-assistant/static/css/main.85049112.chunk.css"
   },
   {
@@ -12,8 +12,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/math-assistant/static/js/2.b52e8300.chunk.js"
   },
   {
-    "revision": "5c6bb39486f4473a6bbc",
-    "url": "/math-assistant/static/js/main.8cc50dca.chunk.js"
+    "revision": "325b452890adebff83cf",
+    "url": "/math-assistant/static/js/main.ed98d5bb.chunk.js"
   },
   {
     "revision": "dab880646999a201ff51",
