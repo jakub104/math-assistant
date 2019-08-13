@@ -79,7 +79,7 @@ const Color22 = styled.h2`
 	color: #43BFC7;
 `;
 const Div = styled.div`
-	min-height: 900px;
+	/* min-height: 900px; */
 	text-align: center;
 `
 class App extends Component {
@@ -88,7 +88,7 @@ class App extends Component {
 		return (
 			<>
 				<Global />
-				<Wrapper app scroll >
+				<Wrapper scroll >
 					<Div>
 						<Color1>1. MathAssistant</Color1>
 						<Color2>2. MathAssistant</Color2>
