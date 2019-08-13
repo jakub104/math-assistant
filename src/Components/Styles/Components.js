@@ -20,9 +20,6 @@ const Wrapper = styled.main`
 			align-items: center;
 			flex-direction: column;
 			-webkit-tap-highlight-color: transparent;
-			:hover {
-				cursor: pointer;
-			}
 		`
 	}
 	${props =>

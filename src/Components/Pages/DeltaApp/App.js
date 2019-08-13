@@ -7,6 +7,7 @@ import Global from '../../Styles/Global'
 import { Wrapper, Icon } from '../../Styles/Components'
 // COMPONENTS
 import Inputs from './components/Inputs'
+import Details from './components/Details/Details'
 // ICONS
 import { faUndoAlt } from '@fortawesome/free-solid-svg-icons'
 
@@ -14,6 +15,25 @@ library.add(faUndoAlt);
 
 const Answer = styled.div`
 	text-align: center;
+`
+
+const DetailsButton = styled.button`
+	width: 110px;
+	font-weight: bold;
+	background: var(--color-secondary);
+	padding: 7px;
+	margin: 0 5px;
+	margin-bottom: 5px;
+	border-radius: 20px;
+	outline: none;
+	/* background-color: #1569C7; */
+	color: lightgray;
+	transition: opacity 0.1s ease-in;
+	font-family: 'Ubuntu', sans-serif;
+	text-transform: uppercase;
+	:hover {
+		cursor: pointer;
+	}
 `
 
 class App extends Component {
@@ -25,7 +45,6 @@ class App extends Component {
 	}
 	check = (A, B, C) => {
 		if (A !== 0) {
-			console.log('aaa:', A);
 			let delta = (B * B) - (4 * A * C)
 			if (delta > 0) {
 				let x1 = (-B + Math.sqrt(delta)) / (2 * A);
@@ -35,7 +54,7 @@ class App extends Component {
 				this.setState({
 					answer:
 						<Answer>
-							x<sub>1</sub> {Number.isInteger(x1) ? ('=') : ('≈')} {x1} i x<sub>2</sub> {Number.isInteger(x2) ? ('=') : ('≈')} {x2}
+							x<sub>1</sub> {x1.toString().length < 4 && x1 !== 0.25 ? ('=') : ('≈')} {x1} i x<sub>2</sub> {Number.isInteger(x2) ? ('=') : ('≈')} {x2}
 							<br />
 							Δ = {delta}
 						</Answer>
@@ -57,6 +76,8 @@ class App extends Component {
 					answer:
 						<Answer>
 							Równanie nie ma rozwiązań rzeczywistych!
+							<br />
+							Δ = {delta}
 						</Answer>
 				});
 			}
@@ -90,6 +111,28 @@ class App extends Component {
 			}
 		);
 	}
+
+	focus = (e) => {
+		let number = e.target.id.slice(- 1).charCodeAt(0);
+		
+		if (e.key === 'Enter' && e.shiftKey) {
+			if (number > 65) {
+				document.getElementById(`value_${String.fromCharCode(number - 1)}`).focus();
+			}
+			else {
+				document.getElementById(`value_C`).focus();
+			}
+		}
+		else if (e.key === 'Enter') {
+			if (number < 67) {
+				document.getElementById(`value_${String.fromCharCode(number + 1)}`).focus();
+			}
+			else {
+				document.getElementById(`value_A`).focus();
+			}
+		}
+	}
+
 	render() {
 		let A = this.state.value_A
 		let B = this.state.value_B
@@ -99,14 +142,14 @@ class App extends Component {
 				<Global />
 				<Wrapper app>
 					<h1>Policz Deltę!</h1>
-					<Inputs onChange={this.setValue} />
+					<Inputs onChange={this.setValue} onKeyPress={this.focus} />
 					{ A !== '' && B !== '' && C !== '' ? (
 						this.state.answer
 						) : (
 						''
 					)}
-					{/* <p>Ten wyraz jest w <sup>indeksie górnym</sup></p>
-					<p>Ten wyraz jest w <sub>indeksie dolnym</sub></p> */}
+					<DetailsButton>Szczegóły</DetailsButton>
+					<Details />
 				</Wrapper>
 			</>
 		);

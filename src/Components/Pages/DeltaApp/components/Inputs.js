@@ -61,8 +61,10 @@ const Unit = styled.span`
 
 const Symbol = styled.div `
 	font-size: 30px;
-	/* font-weight: bold; */
+	font-weight: bold;
+	/* color: #1569C7; */
 	color: lightblue;
+	margin: 0 5px;
 	line-height: 55px;
 `
 
@@ -71,16 +73,17 @@ class Inputs extends Component {
 		return (
 			<InputsWrapper>
 				<InputElement>
-					<Input id="value_A" onChange={this.props.onChange} onKeyPress={this.props.press} placeholder="a" type="number" autoComplete="off" />
+					<Input id="value_A" onChange={this.props.onChange} onKeyPress={this.props.onKeyPress} placeholder="a" type="number" autoComplete="off" />
 					<Unit>x<sup>2</sup></Unit>
 				</InputElement>
-				{/* <Symbol>+</Symbol> */}
+				<Symbol>+</Symbol>
 				<InputElement>
-					<Input id="value_B" onChange={this.props.onChange} onKeyPress={this.props.press} placeholder="b" type="number" autoComplete="off" />
+					<Input id="value_B" onChange={this.props.onChange} onKeyPress={this.props.onKeyPress} placeholder="b" type="number" autoComplete="off" />
 					<Unit>x<sup></sup></Unit>
 				</InputElement>
+				<Symbol>+</Symbol>
 				<InputElement>
-					<Input id="value_C" onChange={this.props.onChange} onKeyPress={this.props.press} placeholder="c" type="number" autoComplete="off" />
+					<Input id="value_C" onChange={this.props.onChange} onKeyPress={this.props.onKeyPress} placeholder="c" type="number" autoComplete="off" />
 				</InputElement>
 			</InputsWrapper>
 		);
