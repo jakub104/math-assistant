@@ -26,9 +26,9 @@ const Wrapper = styled.main`
 		`
 	}
 	${props =>
-		props.app &&
+		props.scroll &&
 		css`
-			overflow-y: scroll;
+			overflow: scroll;
 		`
 	}
 `
