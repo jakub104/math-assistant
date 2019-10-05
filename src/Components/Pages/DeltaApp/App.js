@@ -1,20 +1,38 @@
 // BASIC
 import React, { Component } from 'react'
-import styled, { css } from 'styled-components'
+import styled from 'styled-components'
 import { library } from '@fortawesome/fontawesome-svg-core'
 // STYLES
 import Global from '../../Styles/Global'
-import { Wrapper, Icon } from '../../Styles/Components'
+import { Wrapper } from '../../Styles/Components'
 // COMPONENTS
-import Inputs from './components/Inputs'
-import Details from './components/Details/Details'
+import QuadraticFunctionInputs from './components/QuadraticFunctionInputs'
+import LinearFunctionInputs from './components/LinearFunctionInputs'
+import Details from './components/Details'
 // ICONS
 import { faUndoAlt } from '@fortawesome/free-solid-svg-icons'
 
 library.add(faUndoAlt);
 
+const QuadraticFunction = styled.div`
+	
+`
+
+const LinearFunction = styled.div`
+	display: none;
+`
+
 const Answer = styled.div`
 	text-align: center;
+	font-size: 20px;
+	margin-bottom: 10px;
+	@media (min-width: 500px) {
+		padding: 10px;
+		font-size: 23px;
+	}
+	@media (min-width: 1000px) {
+		font-size: 25px;
+	}
 `
 
 const DetailsButton = styled.button`
@@ -38,23 +56,28 @@ const DetailsButton = styled.button`
 
 class App extends Component {
 	state = {
-		value_A: '',
-		value_B: '',
-		value_C: '',
-		answer: undefined
+		a: undefined,
+		b: undefined,
+		c: undefined,
+		p: undefined,
+		q: undefined,
+		x1: undefined,
+		x2: undefined,
+		answer: undefined,
+		details: false
 	}
 	check = (A, B, C) => {
 		if (A !== 0) {
 			let delta = (B * B) - (4 * A * C)
 			if (delta > 0) {
 				let x1 = (-B + Math.sqrt(delta)) / (2 * A);
-				x1 = Math.round(x1 * 100) / 100
+				let rounded_x1 = Math.round(x1 * 100) / 100
 				let x2 = (-B - Math.sqrt(delta)) / (2 * A);
-				x2 = Math.round(x2 * 100) / 100
+				let rounded_x2 = Math.round(x2 * 100) / 100
 				this.setState({
 					answer:
 						<Answer>
-							x<sub>1</sub> {x1.toString().length < 4 && x1 !== 0.25 ? ('=') : ('≈')} {x1} i x<sub>2</sub> {Number.isInteger(x2) ? ('=') : ('≈')} {x2}
+							x<sub>1</sub> {rounded_x1 % x1 === 0 ? ('=') : ('≈')} {rounded_x1} i x<sub>2</sub> {rounded_x2 % x2 === 0 ? ('=') : ('≈')} {rounded_x2}
 							<br />
 							Δ = {delta}
 						</Answer>
@@ -62,10 +85,11 @@ class App extends Component {
 			}
 			else if (delta === 0) {
 				let x0 = -B  / (2 * A)
+				let rounded_x0 = Math.round(x0 * 100) / 100
 				this.setState({
 					answer:
 						<Answer>
-							x<sub>0</sub> = {x0}
+							x<sub>0</sub> {rounded_x0 % x0 === 0 ? ('=') : ('≈')} {rounded_x0}
 							<br />
 							Δ = {delta}
 						</Answer>
@@ -92,64 +116,101 @@ class App extends Component {
 			})
 		}
 	}
-	setValue = (e) => {
+	setData = (e) => {
 		e.persist();
 		this.setState(
 			() => {
 				return {
-					[e.target.id]: Number(e.target.value)
+					[e.target.placeholder]: Number(e.target.value)
 				};
 			},
 			() => {
-				console.log(this.state.value_A);
-				console.log(this.state.value_B);
-				console.log(this.state.value_C);
-				if(this.state.value_A !== '' && this.state.value_B !== '' && this.state.value_C !== '') {
+				console.log(e.target.placeholder);
+				console.log(this.state.a);
+				console.log(this.state.b);
+				console.log(this.state.c);
+				if(this.state.a !== undefined && this.state.b !== undefined && this.state.c !== undefined) {
 					console.log('Mogę liczyć!');
-					this.check(this.state.value_A, this.state.value_B, this.state.value_C);
+					this.check(this.state.a, this.state.b, this.state.c);
 				}
 			}
 		);
 	}
 
+	setValues = () => {
+
+	}
+
 	focus = (e) => {
-		let number = e.target.id.slice(- 1).charCodeAt(0);
+		let number = Number(e.target.id);
 		
 		if (e.key === 'Enter' && e.shiftKey) {
-			if (number > 65) {
-				document.getElementById(`value_${String.fromCharCode(number - 1)}`).focus();
+			if (number > 1) {
+				document.getElementById((number - 1).toString()).focus();
 			}
 			else {
-				document.getElementById(`value_C`).focus();
+				document.getElementById('3').focus();
 			}
 		}
 		else if (e.key === 'Enter') {
-			if (number < 67) {
-				document.getElementById(`value_${String.fromCharCode(number + 1)}`).focus();
+			if (number < 3) {
+				document.getElementById((number + 1).toString()).focus();
 			}
 			else {
-				document.getElementById(`value_A`).focus();
+				document.getElementById('1').focus();
 			}
 		}
 	}
 
+	activateDetails = () => {
+		this.state.details === false ? (
+			this.setState({details: true})
+		) : (
+			this.setState({details: false})
+		)
+	}
+
 	render() {
-		let A = this.state.value_A
-		let B = this.state.value_B
-		let C = this.state.value_C
+		let a = this.state.a;
+		let b = this.state.b;
+		let c = this.state.c;
+
+		let p = this.state.p;
+		let q = this.state.q;
+
+		let x1 = this.state.x1;
+		let x2 = this.state.x2;
 		return (
 			<>
 				<Global />
 				<Wrapper app>
 					<h1>Policz Deltę!</h1>
-					<Inputs onChange={this.setValue} onKeyPress={this.focus} />
-					{ A !== '' && B !== '' && C !== '' ? (
-						this.state.answer
-						) : (
-						''
-					)}
-					<DetailsButton>Szczegóły</DetailsButton>
-					<Details />
+					<LinearFunction>
+						<LinearFunctionInputs onChange={this.setData} onKeyPress={this.focus} />
+						{
+							(a !== undefined && b !== undefined && c !== undefined) ||
+							(a !== undefined && p !== undefined && q !== undefined) ||
+							(a !== undefined && x1 !== undefined && x2 !== undefined)
+						? (
+							this.state.answer
+							) : (
+							''
+						)}
+					</LinearFunction>
+					<QuadraticFunction>
+						<QuadraticFunctionInputs onChange={this.setData} onKeyPress={this.focus} />
+						{
+							(a !== undefined && b !== undefined && c !== undefined) ||
+							(a !== undefined && p !== undefined && q !== undefined) ||
+							(a !== undefined && x1 !== undefined && x2 !== undefined)
+						? (
+							this.state.answer
+							) : (
+							''
+						)}
+					</QuadraticFunction>
+					<DetailsButton onClick={this.activateDetails}>Szczegóły</DetailsButton>
+					<Details onBackClick={this.activateDetails} active={this.state.details} a={this.state.a} b={this.state.b} c={this.state.c} />
 				</Wrapper>
 			</>
 		);

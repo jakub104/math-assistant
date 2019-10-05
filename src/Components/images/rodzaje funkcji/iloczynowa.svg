@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1080" height="1080" viewBox="0 0 1080 1080">
+  <defs>
+    <clipPath id="clip-custom_2">
+      <rect width="1080" height="1080"/>
+    </clipPath>
+  </defs>
+  <g id="custom_2" data-name="custom – 2" clip-path="url(#clip-custom_2)">
+    <line id="Line_2" data-name="Line 2" x1="875" transform="translate(65.5 540.5)" fill="none" stroke="#000" stroke-linecap="round" stroke-width="80"/>
+    <path id="Polygon_2" data-name="Polygon 2" d="M72.746,29.433a20,20,0,0,1,34.508,0l55.093,93.982a20,20,0,0,1-17.254,30.114H34.907a20,20,0,0,1-17.254-30.114Z" transform="translate(1080 450) rotate(90)" fill="#131313"/>
+    <circle id="Ellipse_2" data-name="Ellipse 2" cx="100" cy="100" r="100" transform="translate(232 440)"/>
+    <circle id="Ellipse_3" data-name="Ellipse 3" cx="100" cy="100" r="100" transform="translate(579 440)"/>
+  </g>
+</svg>

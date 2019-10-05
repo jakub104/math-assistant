@@ -5,23 +5,15 @@ import styled from 'styled-components'
 const InputsWrapper = styled.div`
 	display: flex;
 	justify-content: center;
+	align-items: center;
 	width: 90vw;
 	margin: 10px 0;
-	@media(min-width: 700px) {
-		flex-direction: row;
-		width: 600px;
-		margin: 0;
-	}
-	/* @media(min-width: 550px) {
-		flex-direction: row;
-		width: 600px;
-	} */
 `
 
 const Input = styled.input`
 	width: 50px;
 	padding: 5px;
-	margin: 5px;
+	margin: 20px 5px;
 	border: 0;
 	border-radius: 20px;
 	font-size: 30px;
@@ -55,39 +47,40 @@ const InputElement = styled.div`
 const Unit = styled.span`
 	font-size: 30px;
 	font-weight: bold;
-	color: lightblue;
+	color: var(--color-decorative-light);
 	line-height: 55px;
 `
 
 const Symbol = styled.div `
 	font-size: 30px;
 	font-weight: bold;
-	/* color: #1569C7; */
-	color: lightblue;
-	margin: 0 5px;
+	color: var(--color-primary);
 	line-height: 55px;
+	@media (min-width: 350px) {
+		margin: 0 5px;
+	}
 `
 
-class Inputs extends Component {
+class QuadraticFunctionInputs extends Component {
 	render() {
 		return (
 			<InputsWrapper>
 				<InputElement>
-					<Input id="value_A" onChange={this.props.onChange} onKeyPress={this.props.onKeyPress} placeholder="a" type="number" autoComplete="off" />
+					<Input id="1" onChange={this.props.onChange} onKeyPress={this.props.onKeyPress} placeholder="a" type="number" autoComplete="off" />
 					<Unit>x<sup>2</sup></Unit>
 				</InputElement>
 				<Symbol>+</Symbol>
 				<InputElement>
-					<Input id="value_B" onChange={this.props.onChange} onKeyPress={this.props.onKeyPress} placeholder="b" type="number" autoComplete="off" />
+					<Input id="2" onChange={this.props.onChange} onKeyPress={this.props.onKeyPress} placeholder="b" type="number" autoComplete="off" />
 					<Unit>x<sup></sup></Unit>
 				</InputElement>
 				<Symbol>+</Symbol>
 				<InputElement>
-					<Input id="value_C" onChange={this.props.onChange} onKeyPress={this.props.onKeyPress} placeholder="c" type="number" autoComplete="off" />
+					<Input id="3" onChange={this.props.onChange} onKeyPress={this.props.onKeyPress} placeholder="c" type="number" autoComplete="off" />
 				</InputElement>
 			</InputsWrapper>
 		);
 	}
 }
 
-export default Inputs
+export default QuadraticFunctionInputs

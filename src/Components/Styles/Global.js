@@ -10,7 +10,9 @@ const Global = createGlobalStyle`
 	* {
 		--color-primary: lightgray;
 		--color-secondary: gray;
-		--color-decorative: pink;
+		--color-decorative-light: #5CB3FF;
+		--color-decorative: #1589FF;
+		--color-decorative-dark: #1569C7;
 		--color-background: #202020;
 		--color-light: #ffffff;
 		--color-dark: #000000;

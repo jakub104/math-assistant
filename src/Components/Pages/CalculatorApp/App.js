@@ -1,12 +1,10 @@
 // BASIC
 import React, { Component } from 'react'
-import styled, { css } from 'styled-components'
+import styled from 'styled-components'
 import { library } from '@fortawesome/fontawesome-svg-core'
 // STYLES
 import Global from '../../Styles/Global'
-import { Wrapper, Icon } from '../../Styles/Components'
-// FILES
-import rate from '../../images/rate.svg'
+import { Wrapper } from '../../Styles/Components'
 // ICONS
 import { faUndoAlt } from '@fortawesome/free-solid-svg-icons'
 

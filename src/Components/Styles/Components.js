@@ -11,9 +11,12 @@ library.add(faFacebookF, faGithub, faLinkedinIn, faUserTie, faReply, faCog);
 
 const Wrapper = styled.main`
 	width: 100vw;
+	min-width: 300px;
 	height: 100vh;
+	min-height: 300px;
 	display: flex;
 	justify-content: center;
+	padding: 5vw;
 	${props =>
 		props.app &&
 		css`
@@ -26,6 +29,16 @@ const Wrapper = styled.main`
 		props.scroll &&
 		css`
 			overflow: scroll;
+			::-webkit-scrollbar {
+				width: 0;
+			}
+			::-webkit-scrollbar-track {
+				background: var(--color-dark); 
+				border-radius: 3px;
+			}
+			::-webkit-scrollbar-thumb {
+				background: var(--color-secondary);
+			}
 		`
 	}
 `
