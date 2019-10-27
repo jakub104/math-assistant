@@ -7,7 +7,7 @@ import Global from '../../Styles/Global'
 import { Wrapper } from '../../Styles/Components'
 // COMPONENTS
 import QuadraticFunctionInputs from './components/QuadraticFunctionInputs'
-import LinearFunctionInputs from './components/LinearFunctionInputs'
+// import LinearFunctionInputs from './components/LinearFunctionInputs'
 import Details from './components/Details'
 // ICONS
 import { faUndoAlt } from '@fortawesome/free-solid-svg-icons'
@@ -185,7 +185,7 @@ class App extends Component {
 				<Global />
 				<Wrapper app>
 					<h1>Policz Deltę!</h1>
-					<LinearFunction>
+					{/* <LinearFunction>
 						<LinearFunctionInputs onChange={this.setData} onKeyPress={this.focus} />
 						{
 							(a !== undefined && b !== undefined && c !== undefined) ||
@@ -196,7 +196,7 @@ class App extends Component {
 							) : (
 							''
 						)}
-					</LinearFunction>
+					</LinearFunction> */}
 					<QuadraticFunction>
 						<QuadraticFunctionInputs onChange={this.setData} onKeyPress={this.focus} />
 						{
